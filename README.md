@@ -12,7 +12,7 @@ Lightweight .NET Core console wrapper for [Octokit](https://github.com/octokit/o
 #### 1. Clone repository
 
 ```
-git clone https://github.com/AshleyDhevalall/GitHubClient.git
+git clone https://github.com/AshleyDhevalall/Octokit.Console
 ```
 
 
