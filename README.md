@@ -1,4 +1,4 @@
-# GitHub.Client
+# Octokit.Console
 
 Lightweight .NET Core console wrapper for [Octokit](https://github.com/octokit/octokit.net).
 
