@@ -1,8 +1,23 @@
 ﻿using CommandLine;
 using GitHub.Client;
+using GitHub.Client.Commands;
+using Octokit;
+using System;
 
-static void Main(string[] args)
+/// <summary>
+/// https://makolyte.com/csharp-parsing-commands-and-arguments-in-a-console-app/
+/// </summary>
+
+namespace ConsoleApp1
 {
-	Parser.Default.ParseArguments<PushCommand, CommitCommand>(args)
-		.WithParsed<ICommand>(t => t.Execute());
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Parser.Default.ParseArguments<CommitCommand, RepositoriesCommand>(args)
+             .WithParsed<ICommand>(t => t.Execute());
+
+            Console.ReadLine();
+        }
+    }
 }

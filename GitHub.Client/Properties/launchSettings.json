@@ -2,7 +2,7 @@
   "profiles": {
     "GitHub.Client": {
       "commandName": "Project",
-      "commandLineArgs": "commit -m \"changed code to use CommandLineParser\""
+      "commandLineArgs": "repositories -t \"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\""
     }
   }
 }
