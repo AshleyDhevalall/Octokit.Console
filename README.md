@@ -1,17 +1,49 @@
 # GitHub.Client
 
-.NET Core console wrapper for OctoKit.
+.NET Core console wrapper for [OctoKit](https://github.com/octokit/octokit.net).
 
-All examples require either username/password or token.
+### Prerequisites
+* [GitHub](https://github.com/)
+* [.NET Core 5.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
+* [Token authentication requirements](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)
 
-Executing the Console App or Exe application
-You can execute the exe using the below options
+### Usage
 
-Example 1 - Get repositories using token
+#### 1. Clone repository
+
+```
+git clone https://github.com/AshleyDhevalall/GitHubClient.git
+```
+
+* Navigate to cloned repository folder
+
+#### 2. Building the project
+* Run the command below in the cloned repository folder to build the project
+```
+dotnet restore
+```
+
+#### 3. Running the application
+Get repositories
+```
 GitHub.Client.exe --action repositories --token <some token> --output-path C:\Test
+```
 
-Example 2 - Get projects
-GitHub.Client.exe --action repositories --token <some token> --output-path C:\Test
+Get projects
+```
+GitHub.Client.exe --action projects --token <some token> --output-path C:\Test
+```
 
-Example 3 - Get artifacts in repositories
-GitHub.Client.exe --action repositories --token <some token> --output-path C:\Test
+Get artifacts in repository
+```
+GitHub.Client.exe --action artifacts --token <some token> --repository <some-repository> --output-path C:\Test
+```
+
+## Authors
+
+[Ashley Dhevalall](https://github.com/AshleyDhevalall)
+
+## Acknowledgements
+[GitHub Docs](https://docs.github.com/en)  
+[Matthew Langlois](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)  
+[Itay Sagui](https://medium.com/@saguiitay/playing-with-github-api-octokit-net-1f184faacd59)  
