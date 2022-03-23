@@ -1,23 +1,78 @@
-﻿using CommandLine;
-using GitHub.Client;
-using GitHub.Client.Commands;
-using Octokit;
-using System;
+﻿using Octokit;
+using System.CommandLine;
+using System.CommandLine.Invocation;
 
-/// <summary>
-/// https://makolyte.com/csharp-parsing-commands-and-arguments-in-a-console-app/
-/// </summary>
-
-namespace ConsoleApp1
+namespace GitHub.Client
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
-        {
-            Parser.Default.ParseArguments<CommitCommand, RepositoriesCommand>(args)
-             .WithParsed<ICommand>(t => t.Execute());
+        static readonly string _productName = "my-cool-app";
 
-            Console.ReadLine();
+        static int Main(string[] args)
+        {
+            var rootCommand = new RootCommand
+            {
+                new Option<string>(
+                    "--action",
+                    description: "Specify the action to perform"),
+                new Option<string>(
+                    "--token",
+                    "Specify github token \n"),
+                new Option<string>(
+                    "--repository",
+                    "An option for providing the repository name when action == artifacts. \n"),
+                new Option<string>(
+                    "--output-path",
+                    "An option for file directory path where output will be created.")
+            };
+
+            rootCommand.Description = ".NET Core console wrapper for OctoKit.";
+            rootCommand.Handler = CommandHandler.Create<string, string, string, string>(Execute);
+
+            // Parse the incoming args and invoke the handler
+            return rootCommand.InvokeAsync(args).Result;
+        }
+
+        static void Execute(string action, string token, string outputpath, string repository)
+        {
+            switch (action)
+            {
+                case "repositories":
+                    FetchRepositories(token);
+                    break;
+                case "artifacts":
+                    FetchArtifacts(token, repository);
+                    break;
+                case "projects":
+                    FetchProjects(token);
+                    break;
+            }
+        }
+
+        static void FetchRepositories(string token)
+        {
+            var client = new GitHubClient(
+               new ProductHeaderValue(_productName));
+
+            var tokenAuth = new Credentials(token);
+            client.Credentials = tokenAuth;
+
+            foreach (var repo in client.Repository.GetAllForCurrent().Result)
+            {
+                System.Console.WriteLine(repo.Name);
+                System.Console.WriteLine(repo.GitUrl);
+            }
+        }
+
+        static void FetchProjects(string token)
+        {
+
+        }
+
+       
+        static void FetchArtifacts(string token, string repository)
+        {
+
         }
     }
 }

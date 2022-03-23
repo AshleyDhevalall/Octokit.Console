@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "GitHub.Client": {
+    "GitHub.Console": {
       "commandName": "Project",
-      "commandLineArgs": "repositories -t \"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\""
+      "commandLineArgs": " --action repositories --token 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 --output-path C:\\Test "
     }
   }
 }
