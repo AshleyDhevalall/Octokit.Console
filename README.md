@@ -3,9 +3,9 @@
 .NET Core console wrapper for [OctoKit](https://github.com/octokit/octokit.net).
 
 ### Prerequisites
-[.NET Core 5.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) 
-[GitHub](https://github.com/)   
-[Token authentication requirements](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)  
+[.NET Core 5.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)  
+[GitHub](https://github.com/)  
+[Token authentication requirements](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)   
 
 ### Usage
 
