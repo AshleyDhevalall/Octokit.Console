@@ -2,7 +2,7 @@
 using System.CommandLine;
 using System.CommandLine.Invocation;
 
-namespace GitHub.Client
+namespace Octokit.Console
 {
     class Program
     {

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Octokit.Console": {
+      "commandName": "Project",
+      "commandLineArgs": " --action repositories --token <some token> --output-path C:\\Test "
+    }
+  }
+}

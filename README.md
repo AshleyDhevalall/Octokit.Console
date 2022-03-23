@@ -1,6 +1,6 @@
 # GitHub.Client
 
-.NET Core console wrapper for [OctoKit](https://github.com/octokit/octokit.net).
+Lightweight .NET Core console wrapper for [Octokit](https://github.com/octokit/octokit.net).
 
 ### Prerequisites
 [.NET Core 5.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)  
