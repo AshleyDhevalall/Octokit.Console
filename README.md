@@ -3,9 +3,9 @@
 .NET Core console wrapper for [OctoKit](https://github.com/octokit/octokit.net).
 
 ### Prerequisites
-* [GitHub](https://github.com/)
-* [.NET Core 5.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/5.0)
-* [Token authentication requirements](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)
+[.NET Core 5.0 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/5.0) 
+[GitHub](https://github.com/)   
+[Token authentication requirements](https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/)  
 
 ### Usage
 
@@ -15,26 +15,26 @@
 git clone https://github.com/AshleyDhevalall/GitHubClient.git
 ```
 
-* Navigate to cloned repository folder
 
 #### 2. Building the project
-* Run the command below in the cloned repository folder to build the project
+* Navigate to cloned repository folder
+* Run the build.ps1 file
 ```
 dotnet restore
 ```
 
 #### 3. Running the application
-Get repositories
+* Get repositories
 ```
 GitHub.Client.exe --action repositories --token <some token> --output-path C:\Test
 ```
 
-Get projects
+* Get projects
 ```
 GitHub.Client.exe --action projects --token <some token> --output-path C:\Test
 ```
 
-Get artifacts in repository
+* Get artifacts in repository
 ```
 GitHub.Client.exe --action artifacts --token <some token> --repository <some-repository> --output-path C:\Test
 ```
