@@ -26,17 +26,17 @@ dotnet restore
 #### 3. Running the application
 * Get repositories
 ```
-GitHub.Client.exe --action repositories --token <some token> --output-path C:\Test
+Octokit.Console.exe --action repositories --token <some token> --output-path C:\Test
 ```
 
 * Get projects
 ```
-GitHub.Client.exe --action projects --token <some token> --output-path C:\Test
+Octokit.Console.exe --action projects --token <some token> --output-path C:\Test
 ```
 
 * Get artifacts in repository
 ```
-GitHub.Client.exe --action artifacts --token <some token> --repository <some-repository> --output-path C:\Test
+Octokit.Console.exe --action artifacts --token <some token> --repository <some-repository> --output-path C:\Test
 ```
 
 ## Authors
